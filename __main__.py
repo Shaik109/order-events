@@ -10,8 +10,8 @@ import json
 import sys
 from pathlib import Path
 
-from pipeline.generate import generate
-from pipeline.tasks import run_pipeline
+from .generate import generate
+from .tasks import run_pipeline
 
 
 def main(argv: list[str] | None = None) -> int:
