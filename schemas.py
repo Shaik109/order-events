@@ -15,7 +15,7 @@ from datetime import date, datetime, timezone
 from decimal import Decimal, InvalidOperation
 from pathlib import Path
 
-from pipeline.errors import EmptyBatchError, MissingSourceError, SchemaChangeError
+from errors import EmptyBatchError, MissingSourceError, SchemaChangeError
 
 EVENT_TYPES = frozenset({"placed", "paid", "shipped", "cancelled"})
 CUSTOMER_ID = re.compile(r"^C\d{4,}$")

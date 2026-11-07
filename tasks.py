@@ -14,10 +14,10 @@ import os
 from dataclasses import dataclass
 from pathlib import Path
 
-from pipeline import warehouse as wh
-from pipeline.errors import ReconciliationError
-from pipeline.orchestrator import Task, file_notifier, new_run_id, run_dag
-from pipeline.schemas import ENTITIES, check_header, read_source, validate_batch
+from . import warehouse as wh
+from .errors import ReconciliationError
+from .orchestrator import Task, file_notifier, new_run_id, run_dag
+from .schemas import ENTITIES, check_header, read_source, validate_batch
 
 PUBLISHED_COLUMNS = ["order_id", "customer_id", "current_status", "placed_at", "event_count", "gross_amount"]
 

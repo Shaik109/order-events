@@ -19,7 +19,18 @@ from datetime import datetime
 from decimal import Decimal
 from pathlib import Path
 
-from pipeline.schemas import BatchResult, EntitySpec
+from typing import Protocol
+
+
+class EntitySpec(Protocol):
+    name: str
+    key: str
+    header: list[str]
+
+
+class BatchResult(Protocol):
+    valid: list[dict]
+    source_file: str
 
 SCHEMA = """
 CREATE TABLE IF NOT EXISTS customers (

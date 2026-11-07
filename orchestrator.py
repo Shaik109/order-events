@@ -22,7 +22,11 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Callable
 
-from pipeline.errors import NonRetryableError
+try:
+    from .errors import NonRetryableError
+except ImportError:
+    class NonRetryableError(Exception):
+        """An error that should not trigger another task attempt."""
 
 log = logging.getLogger("pipeline")
 
